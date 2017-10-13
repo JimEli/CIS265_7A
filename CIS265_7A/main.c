@@ -37,7 +37,7 @@
 * Submitted in partial fulfillment of the requirements of PCC CIS-265.
 *************************************************************************
 * Change Log:
-*   09/3/2017: Initial release. JME
+*   09/03/2017: Initial release. JME
 *   09/27/2017: Added conversion of word to lower case. JME
 *   10/09/2017: Removed some unnecessary code. JME
 *************************************************************************/
@@ -52,6 +52,9 @@
 #define MAX_WORD_LENGTH    20                    // Max word length.
 #define WORD_LENGTH        (MAX_WORD_LENGTH + 1) // String length.
 #define MAX_INPUT_ATTEMPTS 3                     // Maximum invalid input attempts.
+#define INSTRUCTIONS       "This program finds the \"smallest\" and \"largest\" word in a series\n" \
+                           "of words entered. The program will stop accepting input when a\n"       \
+                           "four-letter word is entered. Words over 20 letters are ignored.\n\n"
 
 // Validate string characters as alphabetic.
 bool validateWord(const char* s) {
@@ -73,10 +76,8 @@ int main(void) {
 	char smallest_word[WORD_LENGTH] = { 'z' }; // Make shortest word artifically long, so everything is shorter.
 
 	// Display program instructions.
-	fputs("This program finds the \"smallest\" and \"largest\" word in a series\n"
-		"of words entered. The program will stop accepting input when a\n"
-		"four-letter word is entered. Words over 20 letters are ignored.\n\n", stdout);
-	
+	fputs(INSTRUCTIONS, stdout);
+
 	// Main entry/test loop.
 	while (1) {
 		char word[WORD_LENGTH]; // Word entered by user.
