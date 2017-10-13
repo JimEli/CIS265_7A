@@ -4,7 +4,7 @@
 * Author: James Eli
 * Date: 9/3/2017
 *
-* Write a program that finds the ìsmallestî and ìlargestî in a series of 
+* Write a program that finds the ‚Äúsmallest‚Äù and ‚Äúlargest‚Äù in a series of 
 * words. After the user enters the words, the program will determine which 
 * words would come first and last if the words were listed in dictionary 
 * order. The program must stop accepting input when the user enters a 
@@ -21,9 +21,9 @@
 *   Largest word: zebra
 *
 * Hint: Use two strings named smallest_word and largest_word to keep track 
-* of the ìsmallestî and ìlargestî words entered so far. Each time the user 
+* of the ‚Äúsmallest‚Äù and ‚Äúlargest‚Äù words entered so far. Each time the user 
 * enters a new word, use strcmp to compare it with smallest_word; if the 
-* word is ìsmallerî, use strcpy to save it in smallest_word. Do a similar 
+* word is ‚Äúsmaller‚Äù, use strcpy to save it in smallest_word. Do a similar 
 * comparison with largest_word. Use strlen to determine when the user 
 * entered a four-letter word.
 *
@@ -108,13 +108,14 @@ int main(void) {
 				}
 				continue;
 			}
-			attempts = 0; // Reset.
 
 			// Validate word as alphabetic charaters.
 			if (!validateWord(word)) {
 				fputs("Skipping word, entry contains non-alphabetic characters.\n", stdout);
 				continue;
 			}
+
+			attempts = 0; // Reset.
 
 			// Convert word to lower case (added 9/27/17 JME).
 			for (char *c = word; *c; ++c) 
